@@ -1,7 +1,10 @@
 import React from "react";
-import { HashRouter, Routes, Route, BrowserRouter } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
+import Detail from "./routes/Detail";
+import Navigation from "./components/Navigation";
+
 // import axios from "axios";
 // import Movie from "./components/Movie";
 // import "./App.css";
@@ -115,14 +118,14 @@ import About from "./routes/About";
 
 function App() {
   return (
-    <BrowserRouter>
-      <HashRouter>
-        <Routes>
-          <Route path="/" exact={true} element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </HashRouter>
-    </BrowserRouter>
+    <HashRouter>
+      <Navigation />
+      <Routes>
+        <Route path="/" exact={true} element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/movie-detail" element={<Detail />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
